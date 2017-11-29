@@ -1,22 +1,32 @@
-package com.tm.iot.controller;
+﻿package com.tm.iot.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.tm.iot.model.Device;
 import com.tm.iot.service.DeviceService;
 
 @Controller
+@RequestMapping("/dashboard")
 public class DeviceController {
-	@Autowired
+	@Resource(name="deviceServiceImpl")
 	DeviceService service;
 
-	@RequestMapping("/dashboard")
+	@RequestMapping("/list")
 	public String list(Model model) {
-		model.addAttribute("list", service.getList()); // jsp에서 "paging", "list" 사용 가능해짐
+		model.addAttribute("list", service.getList());
 		return "dashboard/list";
+	}
+	
+	@RequestMapping("/view")
+	public String view(
+			@RequestParam("deviceCode") String deviceCode
+			, Model model) {
+		model.addAttribute("list", service.getDeviceDetail(deviceCode));
+		return "dashboard/view";
 	}
 }

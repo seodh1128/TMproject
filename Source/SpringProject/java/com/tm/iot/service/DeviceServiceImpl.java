@@ -18,4 +18,9 @@ public class DeviceServiceImpl implements DeviceService{
 	public List<Device> getList() {
 		return dao.selectList();
 	}
+
+	@Override
+	public List<Device> getDeviceDetail(String deviceCode) {
+		return dao.selectDeviceDetail(deviceCode);
+	}
 }

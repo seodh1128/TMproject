@@ -25,15 +25,15 @@ $(document).ready(function(){
 			<th>value</th>
 			<th>time</th>
 		</tr>
-		<c:forEach var="sensor" items="${list}" varStatus="status">
+		<c:forEach var="device" items="${list}" varStatus="status">
 			<tr>
-				<td>${sensor.sensorValue}</td>
-				<td>${sensor.sensorTime}</td>
+				<td>${device.deviceValue}</td>
+				<td>${device.deviceTime}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	<div class="text-center">
-		<a class="btn btn-primary" href="list"><i class="fa fa-list"> 목록 </i></a> /
+		<a class="btn btn-primary" href="list"><i class="fa fa-list"> 목록 </i></a>
 	</div>
 </div>
 </body>
