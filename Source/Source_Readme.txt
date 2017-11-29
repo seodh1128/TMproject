@@ -25,3 +25,4 @@ Source 폴더 내 파일들을 수정/추가/삭제할 경우,
 11/29 서동현 AndroidProject(Arduino to Oracle App-Gateway)추가 AtoOTest.zip
 11/29 서동현 ArduinoProject 추가                               device_source01
 11/29 이종석 Web Project 추가(Spring MVC maven Project)        SpringProject
+11/29 이종석 device list 및 상세보기 추가                       SpringProject
