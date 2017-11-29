@@ -8,5 +8,10 @@
 		from device a, device b
 		group by a.device_code, a.device_value, a.device_time having a.device_time = max(b.device_time)
 	</select>
+	
+	<select id="selectDeviceDetail" parameterType="String" resultType="Device">
+		select * from device
+		where device_code = #{device_code}
+	</select>
 
 </mapper>

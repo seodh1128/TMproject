@@ -29,7 +29,7 @@ $(document).ready(function(){
 		<c:forEach var="device" items="${list}" varStatus="status">
 			<tr>
 				<td>
-					<a href="view?deviceCode=${divice.deviceCode}">
+					<a href="view?deviceCode=${device.deviceCode}">
 						${device.deviceCode}
 					</a>
 				</td>
