@@ -12,6 +12,7 @@
 	<select id="selectDeviceDetail" parameterType="String" resultType="Device">
 		select * from device
 		where device_code = #{device_code}
+		order by device_time desc;
 	</select>
 
 </mapper>
