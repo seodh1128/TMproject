@@ -3,5 +3,10 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tm.iot.dao.DeviceDao">
+	<select id="selectList" resultType="Device">
+		select a.device_code, a.device_value, a.device_time
+		from device a, device b
+		group by a.device_code, a.device_value, a.device_time having a.device_time = max(b.device_time)
+	</select>
 
 </mapper>

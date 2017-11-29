@@ -16,6 +16,6 @@ public class DeviceServiceImpl implements DeviceService{
 	
 	@Override
 	public List<Device> getList() {
-		return dao.getList();
+		return dao.selectList();
 	}
 }
