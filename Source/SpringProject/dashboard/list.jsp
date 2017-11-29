@@ -18,7 +18,7 @@ $(document).ready(function(){
 <body>
 <div class="container">
 	<div class="page-header text-center">
-		<h2><i class="fa fa-users"></i> 스마트 홈 IoT </h2>
+		<h2><i class="fa fa-home"></i> 스마트 홈 IoT </h2>
 	</div>
 	<table class="table table-striped table-hover">
 		<tr>
