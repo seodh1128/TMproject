@@ -23,4 +23,10 @@ public class DeviceServiceImpl implements DeviceService{
 	public List<Device> getDeviceDetail(String deviceCode) {
 		return dao.selectDeviceDetail(deviceCode);
 	}
+
+	@Override
+	public boolean insert(Device device) {
+		int result = dao.insert(device);
+		return result == 1;
+	}
 }

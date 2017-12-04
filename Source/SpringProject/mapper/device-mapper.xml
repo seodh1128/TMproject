@@ -14,5 +14,10 @@
 		where device_code = #{device_code}
 		order by device_time desc;
 	</select>
+	
+	<insert id="insert" parameterType="Device">
+		insert into device(device_id, device_type, device_code, device_value, device_time)
+		values(dev_seq.nextval, #{deviceType}, #{deviceCode}, #{deviceValue}, #{deviceTime})
+	</insert>
 
 </mapper>
