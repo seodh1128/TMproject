@@ -18,7 +18,7 @@ exp system/password@xe owner=유저명 file=c:\해당 경로\파일명.dmp
 전체 DB 복원
 imp system/password@xe file=file=c:\해당 경로\파일명.dmp
 특정 유저의 DB 복원
-exp system/password@xe fromuser=유저명 touser=유저명 file=c:\해당 경로\파일명.dmp
+imp system/password@xe fromuser=유저명 touser=유저명 file=c:\해당 경로\파일명.dmp
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 

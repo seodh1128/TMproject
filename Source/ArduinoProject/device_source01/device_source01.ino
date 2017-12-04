@@ -21,6 +21,8 @@ void setup() {
   lcd.setCursor(0,0); // 커서 위치 설정 (x,y)
   lcd.print("start");
 }
+
+
 void loop() {
   int reading = analogRead(temperaturePin);  //센서값 읽어옴
   //센서값 섭씨온도로 변환(LM35 계산 공식에 의함)
@@ -37,14 +39,31 @@ void loop() {
   comString.trim();
   
   if(comString.equals("temp")) { //myString 값이 있다면
+    lcd.clear();  //LCD 초기화
     lcd.setCursor(0,0); // 커서 위치 설정 (x,y)
     lcd.print("success");
     lcd.setCursor(0,1); // 커서 위치 설정 (x,y)
-    lcd.println("");
-    lcd.println(val); 
+    lcd.print(val); 
     sendTemperature(val);
     myString="";    //myString 변수값 초기화
+  }else if(comString.equals("on")){
+    lcd.clear();  //LCD 초기화
+    lcd.setCursor(0,0); // 커서 위치 설정 (x,y)
+    lcd.print("success");
+    lcd.setCursor(0,1); // 커서 위치 설정 (x,y)
+    lcd.print("LED ON"); 
+    digitalWrite(8, HIGH);
+    myString="";    //myString 변수값 초기화
+  }else if(comString.equals("off")){
+    lcd.clear();  //LCD 초기화
+    lcd.setCursor(0,0); // 커서 위치 설정 (x,y)
+    lcd.print("success");
+    lcd.setCursor(0,1); // 커서 위치 설정 (x,y)
+    lcd.print("LED OFF"); 
+    digitalWrite(8, LOW);
+    myString="";    //myString 변수값 초기화
   }else if(!comString.equals("")) { //myString 값이 있다면
+    lcd.clear();  //LCD 초기화
     lcd.setCursor(0,1); // 커서 위치 설정 (x,y)
     lcd.print("");
     lcd.print(myString); 
@@ -52,6 +71,7 @@ void loop() {
     Serial.println(myString.length()); 
     Serial.println(comString.length()); 
     myString="";    //myString 변수값 초기화
+    
   }
 }
 
@@ -59,10 +79,10 @@ void sendTemperature(int value) {
   // 온도 센서를 위한 Json 객체 설정
   StaticJsonBuffer<200> temperatureBuffer;
   JsonObject &temperature = temperatureBuffer.createObject();
-  temperature["type"] = "temperature";
-  temperature["name"] = "temperature1";
-  temperature["pinNumber"] = 0;
-  temperature["value"] = value;
+  temperature["deviceType"] = "temperature";
+  temperature["deviceCode"] = "temperature1";
+  temperature["deviceValue"] = value;
+  temperature["deviceAM"] = 1;
   temperature["time"] = millis();
   temperature.printTo(BTSerial);    
   BTSerial.println();
