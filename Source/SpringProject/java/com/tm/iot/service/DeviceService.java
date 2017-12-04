@@ -9,4 +9,5 @@ import com.tm.iot.model.Device;
 public interface DeviceService {
 	List<Device> getList();
 	List<Device> getDeviceDetail(String deviceCode);
+	boolean insert(Device device);
 }

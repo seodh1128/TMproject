@@ -7,4 +7,5 @@ import com.tm.iot.model.Device;
 public interface DeviceDao {
 	List<Device> selectList();
 	List<Device> selectDeviceDetail(String deviceCode);
+	int insert(Device device);
 }

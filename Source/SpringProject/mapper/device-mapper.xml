@@ -4,15 +4,24 @@
 
 <mapper namespace="com.tm.iot.dao.DeviceDao">
 	<select id="selectList" resultType="Device">
-		select a.device_code, a.device_value, a.device_time
-		from device a, device b
-		group by a.device_code, a.device_value, a.device_time having a.device_time = max(b.device_time)
+		select device_code, device_value, device_time
+		from
+		(
+    		select device_code, device_value, device_time, row_number() over(partition by device_code order by device_time desc) rn
+    		from device
+		)
+		where rn = 1
 	</select>
 	
 	<select id="selectDeviceDetail" parameterType="String" resultType="Device">
 		select * from device
-		where device_code = #{device_code}
-		order by device_time desc;
+		where device_code = #{deviceCode}
+		order by device_time desc
 	</select>
+	
+	<insert id="insert" parameterType="Device">
+		insert into device(device_id, device_type, device_code, device_value, device_time)
+		values(dev_seq.nextval, #{deviceType}, #{deviceCode}, #{deviceValue}, #{deviceTime})
+	</insert>
 
 </mapper>
