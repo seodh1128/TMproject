@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>         
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,7 +29,7 @@ $(document).ready(function(){
 		<c:forEach var="device" items="${list}" varStatus="status">
 			<tr>
 				<td>${device.deviceValue}</td>
-				<td>${device.deviceTime}</td>
+				<td><fmt:formatDate value="${device.deviceTime}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
 			</tr>
 		</c:forEach>
 	</table>
