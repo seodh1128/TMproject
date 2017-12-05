@@ -14,9 +14,14 @@
 	</select>
 	
 	<select id="selectDeviceDetail" parameterType="String" resultType="Device">
-		select * from device
-		where device_code = #{deviceCode}
-		order by device_time desc
+		select device_code, device_value, device_time
+		from
+		(
+			select device_code, device_value, device_time, row_number() over(order by device_time desc) rn
+    		from device
+    		where device_code = #{deviceCode}
+		)
+		where rn between 1 and 15
 	</select>
 	
 	<insert id="insert" parameterType="Device">
