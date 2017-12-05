@@ -18,7 +18,7 @@ $(document).ready(function(){
 <body>
 <div class="container">
 	<div class="page-header">
-		<h2><i class="fa fa-search"></i> 상세보기 </h2>
+		<h2><i class="fa fa-search"></i> ${list["0"].deviceCode} 상세보기 </h2>
 	</div>
 	<table class="table">
 		<tr>
