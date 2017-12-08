@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>         
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-
+	setTimeout("location.reload()", 15000);
 });
 </script>
 </head>
@@ -23,21 +23,25 @@ $(document).ready(function(){
 	</div>
 	<table class="table table-striped table-hover">
 		<tr>
-			<th>code</th>
-			<th>value</th>
-			<th>time</th>
+			<th>기기명</th>
+			<th>센서 종류</th>
+			<th>측정 값</th>
+			<th>기기 상태</th>
+			<th>기기 모드</th>
+			<th>측정 시간</th>
 		</tr>
-		<c:forEach var="device" items="${list}" varStatus="status">
+		<c:forEach var="data" items="${list}" varStatus="status">
 			<tr>
 				<td>
-					<a href="view?deviceCode=${device.deviceCode}">
-						${device.deviceCode}
+					<a href="view?deviceCode=${data.deviceCode}">
+						${data.deviceName}
 					</a>
 				</td>
-				<td>	
-				${device.deviceValue}
-				</td>
-				<td><fmt:formatDate value="${device.deviceTime}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
+				<td>${data.sensorType}</td>
+				<td>${data.sensorValue}${data.sensorUnits}</td>
+				<td>${data.deviceState}</td>
+				<td>${data.autoMode}</td>
+				<td><fmt:formatDate value="${data.regDate}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
 			</tr>
 		</c:forEach>
 	</table>
