@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>         
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,17 +19,23 @@ $(document).ready(function(){
 <body>
 <div class="container">
 	<div class="page-header">
-		<h2><i class="fa fa-search"></i> ${list["0"].deviceCode} 상세보기 </h2>
+		<h2><i class="fa fa-search"></i> ${list["0"].deviceName} 상세보기 </h2>
 	</div>
 	<table class="table">
 		<tr>
-			<th>value</th>
-			<th>time</th>
+			<th>센서 종류</th>
+			<th>측정 값</th>
+			<th>기기 상태</th>
+			<th>기기 모드</th>
+			<th>측정 시간</th>
 		</tr>
-		<c:forEach var="device" items="${list}" varStatus="status">
+		<c:forEach var="data" items="${list}" varStatus="status">
 			<tr>
-				<td>${device.deviceValue}</td>
-				<td><fmt:formatDate value="${device.deviceTime}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
+				<td>${data.sensorType}</td>
+				<td>${data.sensorValue}${data.sensorUnits}</td>
+				<td>${data.deviceState}</td>
+				<td>${data.autoMode}</td>
+				<td><fmt:formatDate value="${data.regDate}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
 			</tr>
 		</c:forEach>
 	</table>

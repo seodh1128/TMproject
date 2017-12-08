@@ -1,69 +1,48 @@
 package com.tm.iot.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Device implements Serializable {
 	
-	private long deviceId;
-	private String deviceType;
-	private String deviceCode;
-	private double deviceValue;
-	private Date deviceTime;
+	private int deviceCode;
+	private String deviceName;
+	private int pinNumber;
 	
 	public Device() {}
-
-	public Device(String deviceType, String deviceCode, double deviceValue, Date deviceTime) {
+	
+	public Device(int deviceCode, String deviceName, int pinNumber) {
 		super();
-		this.deviceType = deviceType;
 		this.deviceCode = deviceCode;
-		this.deviceValue = deviceValue;
-		this.deviceTime = deviceTime;
+		this.deviceName = deviceName;
+		this.pinNumber = pinNumber;
 	}
 
-	public long getDeviceId() {
-		return deviceId;
-	}
-
-	public void setDeviceId(long deviceId) {
-		this.deviceId = deviceId;
-	}
-
-	public String getDeviceType() {
-		return deviceType;
-	}
-
-	public void setDeviceType(String deviceType) {
-		this.deviceType = deviceType;
-	}
-
-	public String getDeviceCode() {
+	public int getDeviceCode() {
 		return deviceCode;
 	}
 
+	public void setDeviceCode(int deviceCode) {
+		this.deviceCode = deviceCode;
+	}
+
+	public String getDeviceName() {
+		return deviceName;
+	}
+
 	public void setDeviceName(String deviceName) {
-		this.deviceCode = deviceName;
+		this.deviceName = deviceName;
 	}
 
-	public double getDeviceValue() {
-		return deviceValue;
+	public int getPinNumber() {
+		return pinNumber;
 	}
 
-	public void setDeviceValue(double deviceValue) {
-		this.deviceValue = deviceValue;
-	}
-
-	public Date getDeviceTime() {
-		return deviceTime;
-	}
-
-	public void setDeviceTime(Date deviceTime) {
-		this.deviceTime = deviceTime;
+	public void setPinNumber(int pinNumber) {
+		this.pinNumber = pinNumber;
 	}
 
 	@Override
 	public String toString() {
-		return "Device [deviceId=" + deviceId + ", deviceType=" + deviceType + ", deviceCode=" + deviceCode
-				+ ", deviceValue=" + deviceValue + ", deviceTime=" + deviceTime + "]";
+		return "Device [deviceCode=" + deviceCode + ", deviceName=" + deviceName + ", pinNumber=" + pinNumber + "]";
 	}
 }
