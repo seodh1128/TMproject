@@ -1,51 +1,41 @@
-create table sensor (
-    sensor_code number,
-    sensor_type varchar2(20) not null,
-    sensor_name varchar2(20) not null,
-    sensor_value number not null,
-    sensor_units varchar2(20) not null,
-    reg_date date not null,
-    constraint pk_sensor primary key(sensor_code)
+CREATE TABLE SENSOR (
+    SENSOR_CODE NUMBER,
+    SENSOR_TYPE VARCHAR2(20) NOT NULL,
+    SENSOR_NAME VARCHAR2(20) NOT NULL,
+    SENSOR_UNITS VARCHAR2(20) NOT NULL,
+    CONSTRAINT PK_SENSOR PRIMARY KEY(SENSOR_CODE)
 );
 
-create table device (
-    device_name varchar2(30),
-    sensor_code number,
-    pin_number number,
-    constraint pk_device primary key(device_name),
-    constraint fk_device foreign key(sensor_code) references sensor(sensor_code)
+CREATE TABLE DEVICE (
+    DEVICE_CODE NUMBER,
+    DEVICE_NAME VARCHAR2(30) NOT NULL,
+    PIN_NUMBER NUMBER NOT NULL,
+    CONSTRAINT PK_DEVICE PRIMARY KEY(DEVICE_CODE)
 );
 
-create table iot_data (
-    data_id number,
-    sensor_code number,
-    sensor_value number,
-    device_code number,
-    auto_mode number,
-    device_state number,
-    reg_date date,
-    constraint pk_iot_data primary key(data_id),
-    constraint fk_iot_data_sensor_code foreign key(sensor_code) references sensor(sensor_code),
-    constraint fk_iot_data_device_code foreign key(device_code) references device(device_code)
+CREATE TABLE IOT_DATA (
+    DATA_ID NUMBER,
+    SENSOR_CODE NUMBER,
+    SENSOR_VALUE NUMBER NOT NULL,
+    DEVICE_CODE NUMBER,
+    AUTO_MODE NUMBER NOT NULL,
+    DEVICE_STATE NUMBER NOT NULL,
+    REG_DATE DATE NOT NULL,
+    CONSTRAINT PK_IOT_DATA PRIMARY KEY(DATA_ID),
+    CONSTRAINT FK_IOT_DATA_SENSOR_CODE FOREIGN KEY(SENSOR_CODE) REFERENCES SENSOR(SENSOR_CODE),
+    CONSTRAINT FK_IOT_DATA_DEVICE_CODE FOREIGN KEY(DEVICE_CODE) REFERENCES DEVICE(DEVICE_CODE)
+);
+  
+   
+CREATE TABLE IOT_ACCOUNT (
+    USER_ID VARCHAR2(30),
+    PASSWORD VARCHAR2(40) NOT NULL,
+    CONSTRAINT PK_ACCOUNT PRIMARY KEY(USER_ID)
 );
 
-create table account (
-    user_id varchar2(30),
-    password varchar2(40),
-    constraint pk_account primary key(user_id)
+CREATE TABLE CONTROLL (
+    CONTROLL_ID NUMBER,
+    DEVICE_CODE NUMBER NOT NULL,
+    REG_DATE DATE NOT NULL,
+    CONSTRAINT PK_CONTROLL PRIMARY KEY(CONTROLL_ID)
 );
-
-create table controll (
-    ctrl_id number,
-    device_code number,
-    device_state number,
-    auto_mode number,
-    reg_date date,
-    constraint pk_controll primary key(ctrl_id),
-    constraint fk_device_code foreign key(device_code) references device(device_code),
-    constraint fk_device_state foreign key(device_state) references device(device_state),
-    constraint fk_auto_mode foreign key(auto_mode) references device(auto_mode)
-);
-
-    
-    
