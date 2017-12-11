@@ -1,20 +1,14 @@
 ﻿package com.tm.iot.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.tm.iot.model.Dashboard;
 import com.tm.iot.service.DashboardService;
 
 @Controller
-@RestController
 @RequestMapping("/dashboard")
 public class DashboardController {
 	@Autowired
@@ -32,15 +26,5 @@ public class DashboardController {
 			, Model model) {
 		model.addAttribute("list", service.getDetailList(deviceCode));
 		return "dashboard/view";
-	}
-	
-	@RequestMapping("/api/list")
-	public List<Dashboard> getList() {
-		return service.getList();
-	}
-	
-	@RequestMapping("/api/view/{deviceCode}")
-	public List<Dashboard> getDetail(@PathVariable int deviceCode) {
-		return service.getDetailList(deviceCode);
 	}
 }
