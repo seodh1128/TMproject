@@ -1,6 +1,8 @@
 package com.tm.iot.model;
 
-public class Sensor {
+import java.io.Serializable;
+
+public class Sensor implements Serializable{
 	private int sensorCode;
 	private String sensorType;
 	private String sensorName;
