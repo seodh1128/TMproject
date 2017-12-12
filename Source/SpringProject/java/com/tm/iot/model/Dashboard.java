@@ -1,8 +1,9 @@
 package com.tm.iot.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Dashboard {
+public class Dashboard implements Serializable {
 	private long dataId;
 	private int sensorCode;
 	private double sensorValue;
