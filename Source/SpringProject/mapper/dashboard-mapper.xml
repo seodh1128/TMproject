@@ -4,26 +4,26 @@
 
 <mapper namespace="com.tm.iot.dao.DashboardDao">
 	<select id="selectList" resultType="Dashboard">
-		select device_code, device_name, sensor_type, sensor_value, sensor_units, device_state, auto_mode, reg_date
+		select device_code, sensor_code, device_name, sensor_type, sensor_value, sensor_units, device_state, auto_mode, reg_date
 		from
 		(
-			select d.device_code, d.device_name, s.sensor_type, i.sensor_value, sensor_units, device_state, auto_mode, reg_date, 
-    			row_number() over(partition by i.device_code order by reg_date desc) rn
+			select d.device_code, d.device_name, s.sensor_code, s.sensor_type, i.sensor_value, sensor_units, device_state, auto_mode, reg_date, 
+    			row_number() over(partition by i.sensor_code order by reg_date desc) rn
 			from sensor s, device d, iot_data i
     		where s.sensor_code = i.sensor_code and d.device_code = i.device_code
 		)
-		where rn = 1 or rn = 2 and device_code = 4
+		where rn = 1 order by device_code
 	</select>
 	
-	<select id="selectDetailList" parameterType="int" resultType="Dashboard">
-		select device_name, sensor_type, sensor_value, sensor_units, device_state, auto_mode, reg_date
+	<select id="selectDetailList" parameterType="Dashboard" resultType="Dashboard">
+		select device_name, sensor_code, sensor_type, sensor_value, sensor_units, device_state, auto_mode, reg_date
 		from
 		(
-			select d.device_name, s.sensor_type, i.sensor_value, sensor_units, device_state, auto_mode, reg_date, 
+			select d.device_name, i.sensor_code, s.sensor_type, i.sensor_value, sensor_units, device_state, auto_mode, reg_date,
     			row_number() over(partition by i.device_code order by reg_date desc) rn
 			from sensor s, device d, iot_data i
     		where s.sensor_code = i.sensor_code and d.device_code = i.device_code and i.device_code = #{deviceCode}
 		)
-		where rn between 1 and 15
+		where rn between 1 and 15 and sensor_code = #{sensorCode}
 	</select>
 </mapper>

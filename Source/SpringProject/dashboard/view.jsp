@@ -26,15 +26,33 @@ $(document).ready(function(){
 			<th>센서 종류</th>
 			<th>측정 값</th>
 			<th>기기 상태</th>
-			<th>기기 모드</th>
+			<th>자동 모드</th>
 			<th>측정 시간</th>
 		</tr>
 		<c:forEach var="data" items="${list}" varStatus="status">
 			<tr>
 				<td>${data.sensorType}</td>
 				<td>${data.sensorValue}${data.sensorUnits}</td>
-				<td>${data.deviceState}</td>
-				<td>${data.autoMode}</td>
+				<td>
+				<c:choose>
+					<c:when test="${data.deviceState eq 1}" >
+						<i class="fa fa-toggle-on"></i>
+					</c:when>
+					<c:otherwise>
+						<i class="fa fa-toggle-off"></i>
+					</c:otherwise>
+				</c:choose> 
+				</td>
+				<td>
+				<c:choose>
+					<c:when test="${data.autoMode eq 1}" >
+						<i class="fa fa-toggle-on"></i>
+					</c:when>
+					<c:otherwise>
+						<i class="fa fa-toggle-off"></i>
+					</c:otherwise>
+				</c:choose> 
+				</td>
 				<td><fmt:formatDate value="${data.regDate}" pattern="yyyy-MM-dd kk:mm:ss"/></td>
 			</tr>
 		</c:forEach>
