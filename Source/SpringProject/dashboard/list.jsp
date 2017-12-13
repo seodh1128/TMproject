@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../resources/css/dashboard.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dashboard.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
@@ -26,8 +26,8 @@ $(document).ready(function(){
 	<c:forEach var="data" items="${list}" varStatus="status">
 		<div class="col-lg-6 col-lg-10">
 	        <div class="thumbnail">
-	        	<a href="view?deviceCode=${data.deviceCode}&sensorCode=${data.sensorCode}">
-	        		<img id="deviceImg" src="../resources/image/device${data.deviceCode}.png" alt="Generic placeholder thumbnail">
+	        	<a href="${pageContext.request.contextPath}/dashboard/view?deviceCode=${data.deviceCode}&sensorCode=${data.sensorCode}">
+	        		<img id="deviceImg" src="${pageContext.request.contextPath}/resources/image/device${data.deviceCode}.png" alt="Generic placeholder thumbnail">
 	        	</a>
           		<table class="table table-striped table-hover table-bordered">
 					<tr>
