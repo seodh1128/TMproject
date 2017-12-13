@@ -6,5 +6,5 @@ import com.tm.iot.model.Dashboard;;
 
 public interface DashboardService {
 	List<Dashboard> getList();
-	List<Dashboard> getDetailList(int deviceCode);
+	List<Dashboard> getDetailList(Dashboard dashboard);
 }

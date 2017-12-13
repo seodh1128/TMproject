@@ -20,8 +20,8 @@ public class DashboardServiceImpl implements DashboardService {
 	}
 
 	@Override
-	public List<Dashboard> getDetailList(int deviceCode) {
-		return dao.selectDetailList(deviceCode);
+	public List<Dashboard> getDetailList(Dashboard dashboard) {
+		return dao.selectDetailList(dashboard);
 	}
 
 }

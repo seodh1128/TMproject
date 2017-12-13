@@ -7,5 +7,5 @@ import com.tm.iot.model.Dashboard;
 public interface DashboardDao {
 
 	List<Dashboard> selectList();
-	List<Dashboard> selectDetailList(int deviceCode);
+	List<Dashboard> selectDetailList(Dashboard dashboard);
 }
