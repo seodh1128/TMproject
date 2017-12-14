@@ -3,6 +3,12 @@ package com.tm.iot.model;
 import java.io.Serializable;
 import java.util.Date;
 
+/**************************************
+ *  Author : ¿Ã¡æºÆ
+ *  Date : 2017. 12
+ *  Dashboard Data Transfer Object
+ *************************************/
+
 public class Dashboard implements Serializable {
 	private long dataId;
 	private int sensorCode;
