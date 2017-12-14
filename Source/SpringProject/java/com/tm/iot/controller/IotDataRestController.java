@@ -10,7 +10,7 @@ import com.tm.iot.model.IotData;
 import com.tm.iot.service.IotDataService;
 
 @RestController
-@RequestMapping("/dashboard")
+@RequestMapping("/api/iotData")
 public class IotDataRestController {
 	
 	@Autowired
