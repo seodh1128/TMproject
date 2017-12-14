@@ -5,6 +5,12 @@ import java.util.Date;
 import com.tm.iot.model.Device;
 import com.tm.iot.model.Sensor;
 
+/**************************************
+ *  Author : ¿Ã¡æºÆ
+ *  Date : 2017. 12
+ *  IotData Data Transfer Object
+ *************************************/
+
 public class IotData implements Serializable {
 	private long dataId;
 	private int sensorCode;

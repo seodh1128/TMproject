@@ -2,6 +2,12 @@ package com.tm.iot.model;
 
 import java.io.Serializable;
 
+/**************************************
+ *  Author : ¿Ã¡æºÆ
+ *  Date : 2017. 12
+ *  Sensor Data Transfer Object
+ *************************************/
+
 public class Sensor implements Serializable{
 	private int sensorCode;
 	private String sensorType;

@@ -9,6 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tm.iot.model.IotData;
 import com.tm.iot.service.IotDataService;
 
+/**************************************
+ *  Title : IotData Rest controller
+ *  Author : 이종석
+ *  Date : 2017. 12
+ *  
+ *  retrofit으로 insert 요청이 왔을 때
+ *  iot_data table에 insert 함
+ *************************************/
+
 @RestController
 @RequestMapping("/api/iotData")
 public class IotDataRestController {

@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 import com.tm.iot.dao.DashboardDao;
 import com.tm.iot.model.Dashboard;
 
+/**************************************
+ *  Author : ¿Ã¡æºÆ
+ *  Date : 2017. 12
+ *  Dashboard Data Transfer Object
+ *  Dashboard Service Interface Implement
+ *************************************/
+
 @Service
 public class DashboardServiceImpl implements DashboardService {
 
