@@ -20,7 +20,7 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="container">
-	<div class="page-header text-center">
+	<div class="page-header main-page text-center">
 		<h2><i class="fa fa-home"></i> 스마트 홈 IoT 대시보드</h2>
 	</div>
 	<div class="row text-center">
