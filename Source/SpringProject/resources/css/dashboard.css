@@ -2,3 +2,19 @@
 #deviceImg {
 	height: 280px;
 }
+
+body {
+	background-color : #333;
+}
+
+.page-header.main-page {
+	color : #eee;
+}
+
+.page-header.view-page {
+	color : #eee;
+}
+
+.table {
+	background-color : #eee;
+}

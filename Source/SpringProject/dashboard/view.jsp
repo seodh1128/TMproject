@@ -9,6 +9,7 @@
 <title>상세보기 페이지</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dashboard.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
@@ -19,10 +20,10 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="container">
-	<div class="page-header">
+	<div class="page-header view-page text-center">
 		<h2><i class="fa fa-search"></i> ${list["0"].deviceName} 상세보기 </h2>
 	</div>
-	<table class="table">
+	<table class="table table-striped table-hover table-bordered">
 		<tr>
 			<th>센서 종류</th>
 			<th>측정 값</th>
@@ -59,7 +60,7 @@ $(document).ready(function(){
 		</c:forEach>
 	</table>
 	<div class="text-center">
-		<a class="btn btn-primary" href="list"><i class="fa fa-list"> 목록 </i></a>
+		<a class="btn btn-default" href="list"><i class="fa fa-list"> 목록 </i></a>
 	</div>
 </div>
 </body>
