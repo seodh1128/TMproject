@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tm.iot.dao.IotDataDao">
+	<insert id="insert" parameterType="IotData">
+		insert into iot_data(data_id, sensor_code, sensor_value, device_code, auto_mode, device_state, reg_date)
+		values(data_seq.nextval, #{sensorCode}, #{sensorValue}, #{deviceCode}, #{autoMode}, #{deviceState}, #{regDate})
+	</insert>
+
+</mapper>
