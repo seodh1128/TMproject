@@ -8,7 +8,7 @@ import com.tm.iot.dao.IotDataDao;
 import com.tm.iot.model.IotData;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : Ïù¥Ï¢ÖÏÑù
  *  Date : 2017. 12
  *  Dashboard Data Transfer Object
  *  IotData Service Implement
