@@ -1,0 +1,189 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/home" />
+
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            android:text=" 스마트 홈 IoT"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.5" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/lux" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="온도"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/tempButton"
+            android:layout_width="105dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="상세보기"
+            android:textSize="20dp"
+            android:onClick="onClick"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="습도"
+            android:textColor="@android:color/holo_blue_light"
+            android:textColorLink="@android:color/holo_blue_bright"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/humiButton"
+            android:layout_width="105dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="상세보기"
+            android:textSize="20dp"
+            android:onClick="onClick"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="조도"
+            android:textColor="@android:color/holo_orange_light"
+            android:textColorLink="@android:color/holo_orange_light"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/luxButton"
+            android:layout_width="105dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="상세보기"
+            android:textSize="20dp"
+            android:onClick="onClick"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="감지"
+            android:textColor="@android:color/black"
+            android:textColorLink="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/sensorButton"
+            android:layout_width="105dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="상세보기"
+            android:textSize="20dp"
+            android:onClick="onClick"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/main"/>
+
+
+    </LinearLayout>
+
+
+
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:text="B to A 결과값 : " />
+
+         <TextView
+             android:id="@+id/receiveMsgView"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />
+     </LinearLayout>-->
+</LinearLayout>
