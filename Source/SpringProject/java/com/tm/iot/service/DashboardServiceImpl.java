@@ -9,7 +9,7 @@ import com.tm.iot.dao.DashboardDao;
 import com.tm.iot.model.Dashboard;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : Ïù¥Ï¢ÖÏÑù
  *  Date : 2017. 12
  *  Dashboard Data Transfer Object
  *  Dashboard Service Interface Implement
