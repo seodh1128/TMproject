@@ -5,7 +5,7 @@ import java.util.List;
 import com.tm.iot.model.Dashboard;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : 
  *  Date : 2017. 12
  *  Dashboard Data Access Object
  *************************************/
