@@ -6,7 +6,7 @@ import com.tm.iot.model.Dashboard;;
 
 /**************************************
  *  Title : Dashboard Service Interface
- *  Author : ¿Ã¡æºÆ
+ *  Author : 
  *  Date : 2017. 12
  *************************************/
 
