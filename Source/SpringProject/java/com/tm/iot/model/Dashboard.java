@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : 
  *  Date : 2017. 12
  *  Dashboard Data Transfer Object
  *************************************/

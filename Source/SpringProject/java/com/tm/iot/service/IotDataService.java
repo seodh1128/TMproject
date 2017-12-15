@@ -4,7 +4,7 @@ import com.tm.iot.model.IotData;
 
 /**************************************
  *  Title : IotData Service Interface
- *  Author : ¿Ã¡æºÆ
+ *  Author : Ïù¥Ï¢ÖÏÑù
  *  Date : 2017. 12
  *  Dashboard Data Transfer Object
  *************************************/
