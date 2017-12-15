@@ -3,7 +3,7 @@ package com.tm.iot.model;
 import java.io.Serializable;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : Ïù¥Ï¢ÖÏÑù
  *  Date : 2017. 12
  *  Device Data Transfer Object
  *************************************/
