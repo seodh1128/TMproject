@@ -6,7 +6,7 @@ import com.tm.iot.model.Device;
 import com.tm.iot.model.Sensor;
 
 /**************************************
- *  Author : ¿Ã¡æºÆ
+ *  Author : Ïù¥Ï¢ÖÏÑù
  *  Date : 2017. 12
  *  IotData Data Transfer Object
  *************************************/
